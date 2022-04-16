@@ -9,16 +9,16 @@ const Services = () => {
       .then((data) => setClasses(data));
   }, []);
   return (
-    // <div className='container'>
-    //   <div>
-    //     <h1 style={{ color: "#514d99", margin: "40px 0" }}>My Services</h1>
-    //   </div>
-    //   <div className='services-wraper my-3'>
-    //     {classes.map((data) => (
-    //       <Service key={data.id} data={data}></Service>
-    //     ))}
-    //   </div>
-    // </div>
+    <div className='container'>
+      <div>
+        <h1 style={{ color: "#514d99", margin: "40px 0" }}>My Services</h1>
+      </div>
+      <div className='services-wraper my-3'>
+        {classes.map((data) => (
+          <Service key={data.id} data={data}></Service>
+        ))}
+      </div>
+    </div>
   );
 };
 
