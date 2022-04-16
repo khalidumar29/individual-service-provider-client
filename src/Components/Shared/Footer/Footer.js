@@ -4,9 +4,9 @@ import footerLogo from "./../../../images/logo.png";
 const Footer = () => {
   return (
     <footer className='bg-dark' style={{ color: "black" }}>
-      <div className='container py-5 d-flex justify-content-between align-items-center'>
+      <div className='container-lg footer-wrap py-5 d-flex justify-content-between align-items-center'>
         <div className='footer-logo'>
-          <img height={80} src={footerLogo} alt='' />
+          <img src={footerLogo} alt='' />
         </div>
         <div className='footer-des d-flex justify-content-between'>
           <ul>

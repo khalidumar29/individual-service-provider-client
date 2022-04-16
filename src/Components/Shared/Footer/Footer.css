@@ -2,6 +2,9 @@ footer {
   margin-top: 60px;
   padding: 30px 0;
 }
+.footer-logo img {
+  height: 80px;
+}
 .footer-des ul li {
   list-style: none;
 }
@@ -12,4 +15,20 @@ footer {
 }
 .copy-dov p {
   color: #767989cc;
+}
+@media (max-width: 576px) {
+  footer {
+    padding: 0;
+    margin: 0;
+  }
+  .footer-logo img {
+    width: 100px;
+  }
+  .copy-dov p {
+    color: #767989cc;
+    font-size: 8px;
+  }
+  .footer-wrap {
+    flex-direction: column;
+  }
 }

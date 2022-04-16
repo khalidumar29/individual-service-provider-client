@@ -3,6 +3,7 @@ import { Carousel } from "react-bootstrap";
 import banner1 from "./../../../../images/banner/banner1.png";
 import banner2 from "./../../../../images/banner/banner2.png";
 import banner3 from "./../../../../images/banner/banner3.png";
+import "./Slider.css";
 const Slider = () => {
   return (
     <div className='container my-2'>
@@ -10,7 +11,7 @@ const Slider = () => {
         <Carousel.Item>
           <img
             style={{ height: "600px" }}
-            className='d-block w-100'
+            className='d-block w-100  slider-img'
             src={banner1}
             alt='First slide'
           />
@@ -24,7 +25,7 @@ const Slider = () => {
         <Carousel.Item>
           <img
             style={{ height: "600px" }}
-            className='d-block w-100'
+            className='d-block w-100 slider-img'
             src={banner2}
             alt='Second slide'
           />
@@ -39,7 +40,7 @@ const Slider = () => {
         <Carousel.Item>
           <img
             style={{ height: "600px" }}
-            className='d-block w-100'
+            className='d-block w-100 slider-img'
             src={banner3}
             alt='Third slide'
           />

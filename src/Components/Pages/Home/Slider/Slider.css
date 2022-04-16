@@ -1,5 +1,5 @@
 @media (max-width: 576px) {
   .slider-img {
-    height: 400px;
+    max-height: 350px;
   }
 }
