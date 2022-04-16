@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "name": "Chemistry",
+    "img": "https://i.ibb.co/pL6dWz9/1.png",
+    "price": "19.99",
+    "description": "this class i'll tech you a to z chemistry for your slaybus"
+  },
+  {
+    "id": "2",
+    "name": "English",
+    "img": "https://i.ibb.co/5YPL04x/2.png",
+    "price": "9.99",
+    "description": "this class i'll tech you a to z english for your slaybus"
+  },
+  {
+    "id": "3",
+    "name": "Mathemtics",
+    "img": "https://i.ibb.co/bBhg3Dr/3.png",
+    "price": "14.55",
+    "description": "this class i'll tech you a to z mathmetics for your slaybus"
+  },
+  {
+    "id": "4",
+    "name": "Physics",
+    "img": "https://i.ibb.co/sJBSDsL/4.png",
+    "price": "29.10",
+    "description": "this class i'll tech you a to z physics for your slaybus"
+  },
+  {
+    "id": "5",
+    "name": "Social Science",
+    "img": "https://i.ibb.co/BqC8vSc/5.png",
+    "price": "8.77",
+    "description": "this class i'll tech you a to z social science for your slaybus"
+  },
+  {
+    "id": "6",
+    "name": "C Programming",
+    "img": "https://i.ibb.co/2jLHyCx/6.png",
+    "price": "25.44",
+    "description": "this class i'll tech you a to z physics for your slaybus"
+  }
+]
