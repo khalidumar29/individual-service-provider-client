@@ -8,7 +8,8 @@ live link [https://tutor-com.web.app/](https://tutor-com.web.app/)
   - React Router Dom
   - React Toastify
 - Different features and functionality
-  - Reasnable price
-  - 24/7 our hasSelectionSupport
-  - extra revison session
-  - very good teacher i am
+  - React Firebase Hooks
+  - Social Media Login System
+  - Password Reset System
+  - Handle Error
+  - First Perfomance
