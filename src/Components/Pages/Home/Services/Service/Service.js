@@ -17,7 +17,10 @@ const Service = ({ data }) => {
         </Card.Text>
         <Card.Text>{description}</Card.Text>
         <Button variant='primary'>
-          <Link style={{ color: "#fff", textDecoration: "none" }} to=''>
+          <Link
+            style={{ color: "#fff", textDecoration: "none" }}
+            to='/checkOut'
+          >
             Check Out
           </Link>
         </Button>

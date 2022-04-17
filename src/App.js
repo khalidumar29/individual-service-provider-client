@@ -3,8 +3,10 @@ import "./App.css";
 import Home from "./Components/Pages/Home/Home";
 import Login from "./Components/Pages/Login/Login";
 import SignUp from "./Components/Pages/SignUp/SignUp";
+import CheckOut from "./Components/Shared/CheckOut/CheckOut";
 import Footer from "./Components/Shared/Footer/Footer";
 import Header from "./Components/Shared/Header/Header";
+import RequireAuth from "./Components/Shared/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -14,6 +16,14 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        <Route
+          path='/checkOut'
+          element={
+            <RequireAuth>
+              <CheckOut />
+            </RequireAuth>
+          }
+        ></Route>
       </Routes>
       <Footer></Footer>
     </div>
