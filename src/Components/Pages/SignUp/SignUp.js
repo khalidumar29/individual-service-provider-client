@@ -2,24 +2,13 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import buttonLogo from "../../../images/buttonlogo.png";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import auth from "../../../firebase.init.js";
 const SignUP = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [createUserWithEmailAndPassword] =
-    useCreateUserWithEmailAndPassword(auth);
-  const handleSignUp = async (e) => {
-    e.preventDefault();
-    await createUserWithEmailAndPassword(email, password);
-    console.log("Updated profile");
-    navigate("/");
-  };
+
   return (
     <div className='form-wraper'>
       <h1 className='text-primary'>Sing Up</h1>
-      <Form onSubmit={handleSignUp}>
+      <Form>
         <Form.Group className='mb-3' controlId='formGroupName'>
           <Form.Label>Name</Form.Label>
           <Form.Control type='text' placeholder='your name' required />
@@ -27,22 +16,12 @@ const SignUP = () => {
         {""}
         <Form.Group className='mb-3' controlId='formGroupEmail'>
           <Form.Label>Email address</Form.Label>
-          <Form.Control
-            onBlur={(e) => setEmail(e.target.value)}
-            type='email'
-            placeholder='Enter email'
-            required
-          />
+          <Form.Control type='email' placeholder='Enter email' required />
         </Form.Group>
         {""}
         <Form.Group className='mb-3' controlId='formGroupPassword'>
           <Form.Label>Password</Form.Label>
-          <Form.Control
-            onBlur={(e) => setPassword(e.target.value)}
-            type='password'
-            placeholder='Password'
-            required
-          />
+          <Form.Control type='password' placeholder='Password' required />
         </Form.Group>
         {""}
 

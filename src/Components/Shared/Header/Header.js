@@ -5,6 +5,7 @@ import { signOut } from "firebase/auth";
 import auth from "../../../firebase.init";
 import CustomLink from "../CustomLink/CustomLink";
 import logo from "./../../../images/logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -13,9 +14,9 @@ const Header = () => {
     <header>
       <Navbar bg='light' expand='lg'>
         <Container>
-          <Navbar.Brand href='#home'>
+          <Link to='/'>
             <img style={{ height: "60px" }} src={logo} alt='' />
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
