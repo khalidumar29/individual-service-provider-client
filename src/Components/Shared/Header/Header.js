@@ -58,7 +58,7 @@ const Header = () => {
               </CustomLink>
               {user ? (
                 <>
-                  <CustomLink
+                  <Link
                     onClick={() => signOut(auth)}
                     style={{
                       color: "#6a70ac",
@@ -70,7 +70,7 @@ const Header = () => {
                     to='/'
                   >
                     Logout
-                  </CustomLink>
+                  </Link>
                 </>
               ) : (
                 <>
@@ -86,33 +86,6 @@ const Header = () => {
                     to='/login'
                   >
                     Login
-                  </CustomLink>
-                </>
-              )}
-              {user ? (
-                <>
-                  <CustomLink
-                    style={{
-                      display: "none",
-                    }}
-                    to='/signup'
-                  >
-                    Sing Up
-                  </CustomLink>
-                </>
-              ) : (
-                <>
-                  <CustomLink
-                    style={{
-                      color: "#6a70ac",
-                      fontWeight: 500,
-                      fontSize: "18px",
-                      marginLeft: "15px",
-                      textDecoration: "none",
-                    }}
-                    to='/signup'
-                  >
-                    Sing Up
                   </CustomLink>
                 </>
               )}

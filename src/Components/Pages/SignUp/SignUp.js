@@ -1,30 +1,67 @@
-import React, { useState } from "react";
+import { React } from "react";
 import { Form } from "react-bootstrap";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
 import buttonLogo from "../../../images/buttonlogo.png";
 const SignUP = () => {
   const navigate = useNavigate();
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    await createUserWithEmailAndPassword(email, password);
+    toast("user created");
+    navigate("/");
+  };
+  if (error || error1) {
+    toast(error?.message || error1?.message);
+  }
 
+  if (user || user1) {
+    navigate("/");
+  }
   return (
     <div className='form-wraper'>
       <h1 className='text-primary'>Sing Up</h1>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group className='mb-3' controlId='formGroupName'>
           <Form.Label>Name</Form.Label>
-          <Form.Control type='text' placeholder='your name' required />
+          <Form.Control
+            type='text'
+            name='name'
+            placeholder='your name'
+            required
+          />
         </Form.Group>
         {""}
         <Form.Group className='mb-3' controlId='formGroupEmail'>
           <Form.Label>Email address</Form.Label>
-          <Form.Control type='email' placeholder='Enter email' required />
+          <Form.Control
+            type='email'
+            name='email'
+            placeholder='Enter email'
+            required
+          />
         </Form.Group>
         {""}
         <Form.Group className='mb-3' controlId='formGroupPassword'>
           <Form.Label>Password</Form.Label>
-          <Form.Control type='password' placeholder='Password' required />
+          <Form.Control
+            type='password'
+            name='password'
+            placeholder='Password'
+            required
+          />
         </Form.Group>
-        {""}
-
         <input className='btn btn-dark' type='submit' value='Sign Up' />
       </Form>
       <p className='mt-3'>
@@ -52,6 +89,9 @@ const SignUP = () => {
         style={{ width: "500px", display: "flex", justifyContent: "center" }}
       >
         <button
+          onClick={() => {
+            signInWithGoogle();
+          }}
           width={300}
           className='btn btn-primary d-flex align-items-center p-2'
         >
@@ -59,6 +99,7 @@ const SignUP = () => {
           <p className='p-0 m-0'>Continue With Google</p>
         </button>
       </div>
+      <ToastContainer />
     </div>
   );
 };
