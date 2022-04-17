@@ -1,6 +1,6 @@
 # tutor-spot.com
 
-[Live Link :](https://tutor-com.web.app/)
+live link [https://tutor-com.web.app/](https://tutor-com.web.app/)
 
 - Technology Use In Project :
   - React
