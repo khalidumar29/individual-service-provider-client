@@ -1,5 +1,3 @@
-const { hasSelectionSupport } = require("@testing-library/user-event/dist/utils")
-
 # tutor-spot.com
 
 [Live Link :](https://tutor-com.web.app/)
