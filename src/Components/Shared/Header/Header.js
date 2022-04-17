@@ -1,5 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import CustomLink from "../CustomLink/CustomLink";
 import logo from "./../../../images/logo.png";
 
 const Header = () => {
@@ -13,36 +15,66 @@ const Header = () => {
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
-              <Nav.Link
-                style={{ color: "black", fontWeight: 450, fontSize: "18px" }}
-                href='#home'
+              <CustomLink
+                style={{
+                  color: "#6a70ac",
+                  fontWeight: 500,
+                  fontSize: "18px",
+                  marginLeft: "15px",
+                  textDecoration: "none",
+                }}
+                to='/'
               >
                 Home
-              </Nav.Link>
-              <Nav.Link
-                style={{ color: "black", fontWeight: 450, fontSize: "18px" }}
-                href='#link'
+              </CustomLink>
+              <CustomLink
+                style={{
+                  color: "#6a70ac",
+                  fontWeight: 500,
+                  fontSize: "18px",
+                  marginLeft: "15px",
+                  textDecoration: "none",
+                }}
+                to=''
               >
                 Blog
-              </Nav.Link>
-              <Nav.Link
-                style={{ color: "black", fontWeight: 450, fontSize: "18px" }}
-                href='#link'
+              </CustomLink>
+              <CustomLink
+                style={{
+                  color: "#6a70ac",
+                  fontWeight: 500,
+                  fontSize: "18px",
+                  marginLeft: "15px",
+                  textDecoration: "none",
+                }}
+                to=''
               >
                 About
-              </Nav.Link>
-              <Nav.Link
-                style={{ color: "black", fontWeight: 450, fontSize: "18px" }}
-                href='#link'
+              </CustomLink>
+              <CustomLink
+                style={{
+                  color: "#6a70ac",
+                  fontWeight: 500,
+                  fontSize: "18px",
+                  marginLeft: "15px",
+                  textDecoration: "none",
+                }}
+                to='login'
               >
                 Login
-              </Nav.Link>
-              <Nav.Link
-                style={{ color: "black", fontWeight: 450, fontSize: "18px" }}
-                href='#link'
+              </CustomLink>
+              <CustomLink
+                style={{
+                  color: "#6a70ac",
+                  fontWeight: 500,
+                  fontSize: "18px",
+                  marginLeft: "15px",
+                  textDecoration: "none",
+                }}
+                to='/signup'
               >
                 Sing Up
-              </Nav.Link>
+              </CustomLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
