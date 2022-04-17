@@ -1,21 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import "./Login.css";
 import buttonLogo from "./../../../images/buttonlogo.png";
-import { navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 const Login = () => {
   const navigate = useNavigate();
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(email, password);
+    navigate("/");
+  };
   return (
     <div className='form-wraper'>
       <h1 className='text-primary'>Please Login</h1>
-      <Form>
+      <Form onClick={handleSignIn}>
         <Form.Group className='mb-3' controlId='formGroupEmail'>
           <Form.Label>Email address</Form.Label>
-          <Form.Control type='email' placeholder='Enter email' />
+          <Form.Control
+            onChange={(e) => setEmail(e.target.value)}
+            type='email'
+            placeholder='Enter email'
+          />
         </Form.Group>
         <Form.Group className='mb-3' controlId='formGroupPassword'>
           <Form.Label>Password</Form.Label>
-          <Form.Control type='password' placeholder='Password' />
+          <Form.Control
+            onChange={(e) => setPassword(e.target.value)}
+            type='password'
+            placeholder='Password'
+          />
         </Form.Group>
         <p style={{ cursor: "pointer" }} className='text-primary'>
           reset your password?
