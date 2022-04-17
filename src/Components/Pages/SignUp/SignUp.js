@@ -19,8 +19,6 @@ const SignUP = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     await createUserWithEmailAndPassword(email, password);
-    toast("user created");
-    navigate("/");
   };
   if (error || error1) {
     toast(error?.message || error1?.message);

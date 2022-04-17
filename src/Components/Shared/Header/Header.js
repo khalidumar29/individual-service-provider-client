@@ -40,7 +40,7 @@ const Header = () => {
                   marginLeft: "15px",
                   textDecoration: "none",
                 }}
-                to=''
+                to='/blogs'
               >
                 Blog
               </CustomLink>
@@ -52,7 +52,7 @@ const Header = () => {
                   marginLeft: "15px",
                   textDecoration: "none",
                 }}
-                to=''
+                to='/about'
               >
                 About
               </CustomLink>

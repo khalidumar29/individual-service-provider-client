@@ -5,6 +5,7 @@ import buttonLogo from "./../../../images/buttonlogo.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import {
+  useAuthState,
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -13,6 +14,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const emailRef = useRef();
+  const [logindUser] = useAuthState(auth);
   const navigate = useNavigate();
   const [signInWithGoogle, user1, loading, error] = useSignInWithGoogle(auth);
   const [signInWithEmailAndPassword, user, loading1, error2] =
@@ -26,7 +28,6 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     signInWithEmailAndPassword(email, password);
-    toast("login success");
   };
   const resetPassword = async (e) => {
     const email = emailRef.current.value;
@@ -37,10 +38,10 @@ const Login = () => {
       toast("please enter your email address");
     }
   };
-  if (user || user1) {
+  if (logindUser) {
     navigate(from, { replace: true });
   }
-  console.log(error, error2);
+
   return (
     <div className='form-wraper'>
       <h1 className='text-primary'>Please Login</h1>
